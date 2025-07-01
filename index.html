@@ -47,16 +47,77 @@
         max-width: 800px;
         box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
       }
+      .tarot-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: url('https://jamessaint.github.io/core/images/hero-bg.jpg') center/cover no-repeat, linear-gradient(135deg, #001a33, #000c1a);
+  color: #fefbf3;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tarot-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.tarot-hero h1, .tarot-hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.tarot-card {
+  background: rgba(254, 251, 243, 0.95);
+  border-left: 8px solid;
+  border-image: linear-gradient(to bottom, #d4af37, #b8860b) 1;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: tarotCardFadeIn 1s forwards;
+}
+
+@keyframes tarotCardFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tarot-card h2 {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tarot-card p {
+  font-weight: 300;
+  color: #222;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
     </style>
   </head>
   <body>
     <header class="hero">
       <h1 class="display-4">Your Example Page</h1>
-      <p class="lead">Built to your exact specifications with clean semantic HTML, Bootstrap 5.</p>
+      <p class="lead">Built to your exact specifications with clean semantic HTML, Bootstrap 5, and your voice.</p>
     </header>
 
     <section class="section-content">
-
+      <h2>Why This Matters</h2>
+      <p>
+        You asked for a standard that’s not generic or robotic. This page proves your design principles can come alive in a real file: mobile-friendly, accessible, and true to your grounded, no-nonsense energy.
+      </p>
     </section>
 
     <section class="section-content">
