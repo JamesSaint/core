@@ -75,12 +75,10 @@
   </style>
 </head>
 <body>
-<div style="position: fixed; width: 0; height: 0; overflow: hidden;">
-<iframe width="0" height="0"
-  src="https://www.youtube.com/embed/mx7Xf-BYbLw?autoplay=1&loop=1&playlist=mx7Xf-BYbLw&controls=0&mute=0&showinfo=0&rel=0"
-  frameborder="0" allow="autoplay">
-</iframe>
-
+<div id="splash" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:#000; display:flex; align-items:center; justify-content:center; z-index:10000;">
+  <div style="text-align:center; color:#afafaf; font-family: 'Titillium Web', sans-serif; font-size:1.5rem;">
+    Initializing Transmission<span id="dots"></span>
+  </div>
 </div>
 
   <!-- Matrix Code Rain -->
@@ -191,6 +189,26 @@ We stand with you, always.`;
     }
     window.onload = typeOut;
   </script>
+<script>
+  // Animated dots
+  let dotCount = 0;
+  const dotElement = document.getElementById('dots');
+  const dotInterval = setInterval(() => {
+    dotCount = (dotCount + 1) % 4;
+    dotElement.textContent = '.'.repeat(dotCount);
+  }, 500);
+
+  // Fade out splash after 3 seconds
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const splash = document.getElementById('splash');
+      splash.style.transition = 'opacity 1.2s ease';
+      splash.style.opacity = 0;
+      setTimeout(() => splash.remove(), 1200);
+      clearInterval(dotInterval);
+    }, 3000); // splash duration
+  });
+</script>
 
 </body>
 </html>
