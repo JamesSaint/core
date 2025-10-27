@@ -25,14 +25,11 @@
   </header>
 
   <section class="card-like">
-    <h2>Entries</h2>
+    <h2 class="h6 text-uppercase">Entries</h2>
     <div class="table-responsive">
       <table>
         <thead>
-          <tr>
-            <th style="width:10rem;">Date</th>
-            <th>Title</th>
-          </tr>
+          <tr><th style="width:10rem;">Date</th><th>Title</th></tr>
         </thead>
         <tbody id="core-body">
           <tr><td colspan="2">Loading…</td></tr>
@@ -54,13 +51,7 @@
                 </div>
             </footer>
             <!-- Year Autoupdate -->
-            <script>
-            (function() {
-                var y = new Date().getFullYear();
-                var el = document.getElementById('copy-year');
-                if (el) el.textContent = y;
-            })();
-            </script>
+<script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
 
   <!-- Defer external script to satisfy CSP -->
   <script src="./index.js" defer></script>
