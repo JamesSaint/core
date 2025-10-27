@@ -21,10 +21,15 @@ function dateFromName(name) {
 }
 function prettyFromName(name) {
   return name
-    .replace(/\.html?$/i, "")
-    .replace(/[-_]/g, " ")
-    .replace(/\b([a-z])/g, s => s.toUpperCase());
+    .replace(/\.html?$/i, "")             // remove .html
+    .replace(/[-_]/g, " ")                // turn - and _ into spaces
+    .replace(/\b20\d{2}\b/g, "")          // remove 4-digit years
+    .replace(/\b\d{1,2}\s?\d{1,2}\b/g, "")// remove DD MM
+    .replace(/\s{2,}/g, " ")              // collapse double spaces
+    .trim()
+    .replace(/\b([a-z])/g, s => s.toUpperCase()); // capitalise words
 }
+
 
 // --- main ---
 function buildIndex() {
