@@ -6,7 +6,8 @@ const PAGES = [
   "Finding_My_Kind_26-10-2025.html",
   "Declaration_Stand_in_Truth_2025-10-26.html",
   "Letter_to_Mum_2025-10-26.html",
-  "Speaking_into_the_machinery_21-10-2025.html"
+  "Speaking_into_the_machinery_21-10-2025.html",
+  "Reparenting_Transmission_09-10-2025.html"
 ];
 
 // --- helpers ---
